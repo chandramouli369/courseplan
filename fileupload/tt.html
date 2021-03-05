@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>File Upload</title>
+        <!-- <link rel="stylesheet" type="text/css" href="../css/bootstrap.css"> -->
+        <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>
+        <script type="text/javascript" src="../js/jquery.min.js"></script>
+        <!-- <script type="text/javascript" src="../js/bootstrap.min.js"></script> -->
+        <!-- Latest compiled and minified CSS -->
+
+        <style type="text/css">
+            .card_upload {
+                background-color: white;
+                border-radius: 7px;
+                box-shadow: 0 15px 20px rgba(0,0,0,0.3);
+                padding: 10px 20px;
+                width: 500px;
+                padding-bottom: 6px;
+            }
+        </style>
+    </head>
+    <body>
+
+        <h3 style="text-align: center; margin-bottom: 40px;">File Uploading</h3>
+        <div class="container card_upload">
+            <form method="post" action="upload.php" enctype="multipart/form-data">
+                <div class="row">
+                    <!-- <div class="col-sm-3"></div> -->
+                    <div class="col-sm-7">
+                        <div class="row">
+                            <div class="col-sm-5" style="">File Upload</div>
+                            <input type="text" name="page" value="<?php echo $page ?>" hidden>
+                            <div class="col-sm-5 input"><input style="height: 25px;" type="file" name="file"></div>
+                            <div class="col-sm-2 input"><input  style="margin-left: 120px;" type="submit" name="submit" value="Upload"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <a id="href" style="color: black;" href="sample.pdf">View</a>
+        <div class="container">
+            <div class="row">
+                <div>
+                    <!-- <img style="height: 630px;margin-top: 30px;" src="<?php echo $file[0]; ?>"> -->
+                    <!-- <iframe src="http://docs.google.com/viewer?url=pdf/sample.pdf"></iframe> -->
+                </div>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function() {
+                    alert ("sd");
+                $("#href").each(function()
+                {           
+                    var a = $(this).attr('href', 'http://docs.google.com/viewer?url=' + $(this).attr('href'));
+                });
+            });​
+        </script>
+
+
+    </body>
+</html>
